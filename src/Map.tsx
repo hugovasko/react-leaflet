@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { MapContainer, TileLayer } from 'react-leaflet';
 import ShowEvses from './ShowEvses';
+import EvseDto from './models/EvseDto';
 
 function Map() {
   const [data] = useState<Pagination<EvseDto>>({
@@ -162,23 +163,5 @@ interface Pagination<T> {
   totalElements: number;
   totalPages: number;
 }
-
-type EvseDto = {
-  id: number;
-  uid: string;
-  name?: string;
-  evseId?: string;
-  status: any;
-  latitude?: string;
-  longitude?: string;
-  address?: string;
-  description?: string;
-  capabilities?: any[];
-  connectors?: any[];
-  tenant: number;
-  partition?: number;
-  location?: number;
-  lastUpdated: any;
-};
 
 export default Map;

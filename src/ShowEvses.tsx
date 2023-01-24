@@ -6,6 +6,7 @@ import ClusterIcon from './assets/GreenDotIcon.svg';
 import MarkerIcon from './assets/MarkerIcon.svg';
 import { PointFeature } from 'supercluster';
 import { GeoJsonProperties } from 'geojson';
+import EvseDto from './models/EvseDto';
 
 const ShowEvses: React.FC<ShowEvsesProps> = ({ data }) => {
   const maxZoom = 22;
@@ -125,24 +126,6 @@ const ShowEvses: React.FC<ShowEvsesProps> = ({ data }) => {
       })}
     </>
   );
-};
-
-type EvseDto = {
-  id: number;
-  uid: string;
-  name?: string;
-  evseId?: string;
-  status: any;
-  latitude?: string;
-  longitude?: string;
-  address?: string;
-  description?: string;
-  capabilities?: any[];
-  connectors?: any[];
-  tenant: number;
-  partition?: number;
-  location?: number;
-  lastUpdated: any;
 };
 
 interface ShowEvsesProps {
