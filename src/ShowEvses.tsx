@@ -91,13 +91,14 @@ const ShowEvses: React.FC<ShowEvsesProps> = ({ data }) => {
               position={[latitude, longitude]}
               icon={clusterIcon(cluster)}>
               <Popup>
-                {supercluster.getChildren(Number(cluster.id)).map((c) => {
+                {supercluster.getLeaves(Number(cluster.id)).map((c) => {
                   const markerData = data.find((evse) => evse.id === c?.properties?.evseId);
                   return (
-                    <div key={c?.properties?.evseId} className="flex flex-col gap-0">
-                      <div onClick={() => logEvseInfo(markerData)}>
-                        {markerData?.name || 'No name'}
-                      </div>
+                    <div
+                      key={c?.properties?.evseId}
+                      className="flex flex-col gap-0"
+                      onClick={() => logEvseInfo(markerData)}>
+                      {markerData?.name || 'No name'}
                     </div>
                   );
                 })}

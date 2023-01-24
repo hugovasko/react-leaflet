@@ -138,13 +138,20 @@ function Map() {
   });
 
   return (
-    <MapContainer className="h-screen w-full" center={[42.8, 24.5]} zoom={8}>
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <ShowEvses data={data?.content} />
-    </MapContainer>
+    <div className="flex">
+      <div className="absolute right-16 z-20 mt-10  flex flex-col gap-2 rounded-2xl bg-white p-3 pt-5 pb-8">
+        <p onClick={() => console.log('foo')}>Hello Lyubo!</p>
+        <p>Here there will be a switch</p>
+        <p>And some filters</p>
+      </div>
+      <MapContainer className="h-screen w-full z-0" center={[42.8, 24.5]} zoom={8}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <ShowEvses data={data?.content} />
+      </MapContainer>
+    </div>
   );
 }
 
