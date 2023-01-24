@@ -54,7 +54,7 @@ const ShowEvses: React.FC<ShowEvsesProps> = ({ data }) => {
     points: points,
     bounds: bounds,
     zoom: zoom,
-    options: { radius: 75, maxZoom: 17 }
+    options: { radius: 75, maxZoom: 15 }
   });
 
   const markerIcon = new L.Icon({
@@ -81,7 +81,7 @@ const ShowEvses: React.FC<ShowEvsesProps> = ({ data }) => {
       {clusters.map((cluster) => {
         // every cluster point has coordinates
         const [longitude, latitude] = cluster.geometry.coordinates;
-        // the point may be either a cluster or a crime point
+        // the point may be either a cluster or an evse point
         const { cluster: isCluster } = cluster.properties as { cluster: boolean };
 
         // we have a cluster to render
@@ -108,11 +108,14 @@ const ShowEvses: React.FC<ShowEvsesProps> = ({ data }) => {
           );
         }
 
-        // we have a single point (crime) to render
+        // we have a single point (evse) to render
         const markerId: number = cluster?.properties?.evseId;
         const markerData = data.find((evse) => evse.id === markerId);
         return (
-          <Marker position={[latitude, longitude]} icon={markerIcon}>
+          <Marker
+            key={cluster?.properties?.evseId}
+            position={[latitude, longitude]}
+            icon={markerIcon}>
             <Popup>
               <div className="flex flex-col gap-0">
                 <div>{markerData?.name}</div>

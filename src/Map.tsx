@@ -44,6 +44,42 @@ function Map() {
         lastUpdated: '2023-01-21T17:18:28'
       },
       {
+        id: 13,
+        uid: '32536',
+        name: 'kolonka13',
+        evseId: 'BE*BEC*E0415032001',
+        status: 'AVAILABLE',
+        latitude: '27.9247',
+        longitude: '43.2141',
+        capabilities: [
+          {
+            id: 3,
+            type: 'CHIP_CARD_SUPPORT',
+            description: 'EVSE has a payment terminal that supports chip cards'
+          },
+          {
+            id: 1,
+            type: 'CHARGING_PROFILE_CAPABLE',
+            description: 'The EVSE supports charging profiles'
+          }
+        ],
+        connectors: [
+          {
+            id: 1,
+            standard: 'IEC_62196_T2',
+            format: 'CABLE',
+            powerType: 'AC_3_PHASE',
+            evse: 1,
+            maxVoltage: 220,
+            maxAmperage: 16,
+            lastUpdated: '2023-01-21T17:18:28'
+          }
+        ],
+        tenant: 2,
+        partition: 2,
+        lastUpdated: '2023-01-21T17:18:28'
+      },
+      {
         id: 2,
         uid: '3257',
         name: 'kolonka2',
