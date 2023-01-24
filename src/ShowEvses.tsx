@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import L, { point } from 'leaflet';
+import L from 'leaflet';
 import useSupercluster from 'use-supercluster';
 import { Marker, Popup, useMap } from 'react-leaflet';
 import ClusterIcon from './assets/GreenDotIcon.svg';
