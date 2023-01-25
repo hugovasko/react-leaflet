@@ -3,7 +3,7 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 import ShowEvses from './ShowEvses';
 import EvseDto from './models/EvseDto';
 
-function Map() {
+const Map: React.FC<MapProps> = () => {
   const [data] = useState<Pagination<EvseDto>>({
     totalElements: 5,
     content: [
@@ -190,7 +190,7 @@ function Map() {
       </MapContainer>
     </div>
   );
-}
+};
 
 interface Pagination<T> {
   content: T[];
@@ -199,5 +199,7 @@ interface Pagination<T> {
   totalElements: number;
   totalPages: number;
 }
+
+interface MapProps {}
 
 export default Map;
